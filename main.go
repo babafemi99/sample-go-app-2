@@ -24,7 +24,7 @@ func main() {
 
 	handler := c.Handler(router)
 	router.Get("/data", app1.GetData)
-	router.Post("/data", app1.PostData)
+	router.Post("/ops", app1.PostData)
 
 	port := ":5101"
 	srv := http.Server{
