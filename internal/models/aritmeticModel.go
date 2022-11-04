@@ -7,7 +7,7 @@ type ArithmeticReq struct {
 }
 
 type ArithmeticRes struct {
-	SlackUsername string `json:"slack_username"`
+	SlackUsername string `json:"slackUsername"`
 	Result        int    `json:"result"`
 	OperationType string `json:"operation_type"`
 }
