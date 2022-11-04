@@ -32,7 +32,7 @@ func main() {
 		Handler:     handler,
 		IdleTimeout: 120 * time.Second,
 	}
-	log.Printf("SERVER STARTING ON PORT %v \n\n", port)
+	log.Printf("SERVER STARTING ON PORT %v \n", port)
 	go func() {
 		err := srv.ListenAndServe()
 		if err != nil {

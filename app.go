@@ -45,7 +45,7 @@ func (a *app) PostData(w http.ResponseWriter, r *http.Request) {
 	}
 	ops, result := a.srv.Compute(data.OperationType, data.X, data.Y)
 	if ops == "" && result == 0 {
-		http.Error(w, fmt.Sprintf("Error Computing: %v", err), http.StatusInternalServerError)
+		http.Error(w, fmt.Sprintf("Error Computing"), http.StatusInternalServerError)
 		return
 	}
 
