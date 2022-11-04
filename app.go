@@ -45,7 +45,8 @@ func (a *app) PostData(w http.ResponseWriter, r *http.Request) {
 	}
 	ops, result := a.srv.Compute(data.OperationType, data.X, data.Y)
 	if ops == "" && result == 0 {
-		http.Error(w, fmt.Sprintf("Error Computing"), http.StatusInternalServerError)
+		w.WriteHeader(http.StatusInternalServerError)
+		json.NewEncoder(w).Encode(map[string]string{"error": "Error computing service"})
 		return
 	}
 
